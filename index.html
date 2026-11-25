@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>JituTools - Free Online Tools</title>
+<style>body{font-family:sans-serif;background:#f0f2f5;margin:0;padding:15px}h1{text-align:center;color:#6c5ce7}.box{background:#fff;padding:15px;border-radius:12px;margin:12px 0;box-shadow:0 2px 8px #0001}input,button{width:100%;padding:10px;margin:6px 0;border-radius:8px;border:1px solid #ddd;box-sizing:border-box}button{background:#6c5ce7;color:#fff;border:none;font-weight:bold}b{color:#2d3436}</style></head>
+<body><h1>🛠️ JituTools</h1><p style="text-align:center">Free Online Tools - Sobkichu Ek Jaygay</p>
+<div class="box"><h3>🎂 Age Calculator</h3><input type="date" id="dob"><button onclick="calcAge()">Calculate Age</button><p id="ageOut"></p></div>
+<div class="box"><h3>⚖️ BMI Calculator</h3><input type="number" id="h" placeholder="Height (cm)"><input type="number" id="w" placeholder="Weight (kg)"><button onclick="calcBMI()">Calculate BMI</button><p id="bmiOut"></p></div>
+<div class="box"><h3>🔑 Password Generator</h3><button onclick="genPass()">Generate Password</button><p id="passOut"></p></div>
+<div class="box"><h3>✍️ Word Counter</h3><input id="txt" placeholder="Ekhane likho..."><button onclick="countW()">Count</button><p id="wordOut"></p></div>
+<script>
+function calcAge(){let d=new Date(document.getElementById('dob').value);let n=new Date();let a=n.getFullYear()-d.getFullYear();document.getElementById('ageOut').innerHTML="Tomar boyos: <b>"+a+" bochor</b>"}
+function calcBMI(){let h=document.getElementById('h').value/100;let w=document.getElementById('w').value;let b=(w/(h*h)).toFixed(1);document.getElementById('bmiOut').innerHTML="Tomar BMI: <b>"+b+"</b>"}
+function genPass(){let c="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#";let p="";for(let i=0;i<12;i++)p+=c[Math.floor(Math.random()*c.length)];document.getElementById('passOut').innerHTML="<b>"+p+"</b>"}
+function countW(){let t=document.getElementById('txt').value.trim();let w=t?t.split(/\s+/).length:0;document.getElementById('wordOut').innerHTML="Words: <b>"+w+"</b> | Letters: <b>"+t.length+"</b>"}
+</script></body></html>
